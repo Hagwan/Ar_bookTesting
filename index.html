@@ -7,25 +7,36 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
+
+
     <a-scene mindar-image="imageTargetSrc: ./targets2.mind ;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+      
       <a-assets>
-        <a-asset-item id="bearModel" src="./tortoise_Pg02.glb"></a-asset-item>
-        <a-asset-item id="raccoonModel" src="./tortoise_P04.glb"></a-asset-item>
-        <a-asset-item id="abdo" src="./tortoise_Pg05.glb"></a-asset-item></a-assets>
+        <script>
+          for (var i = 1; i <= 3; i++) {
+            document.write('<a-asset-item id="page' + i + '" src="./tortoise_Pg0' + (i+1) + '.glb"></a-asset-item>');
+          }
+        </script>
+      </a-assets>
+
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="5 5 5" src="#bearModel" animation-mixer>
-      </a-entity>
-      <a-entity mindar-image-target="targetIndex: 1">
-        <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="5 5 5" src="#raccoonModel" animation-mixer>
-      </a-entity>
 
-      <a-entity mindar-image-target="targetIndex: 2">
-        <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="5 5 5" src="#abdo" animation-mixer>
-      </a-entity>
+
+      <script>
+        for (var i = 1; i <= 3; i++) {
+  document.write(`
+    <a-entity mindar-image-target="targetIndex: ${i-1}">
+      <a-gltf-model rotation="90 0 0" position="0 -0.25 0" scale="5 5 5" src="#page${i}" animation-mixer>
+    </a-entity>
+  `);
+}
+      </script>
+
+
 
     </a-scene>
   </body>
-</html>git
+</html>
