@@ -9,13 +9,13 @@
 <body>
    
   
-  <a-scene mindar-image="imageTargetSrc: ./targets2.mind ;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <a-scene mindar-image="imageTargetSrc: ./targets3.mind ;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
     
     <a-assets>
       <script>
-        for (var i = 1; i <= 3; i++) {
-          document.write('<a-asset-item id="page' + i + '" src="./assests/tortoise_Pg0' + (i + 1) + '.glb"></a-asset-item>');
+        for (var i = 0; i <= 14; i++) {
+          document.write('<a-asset-item id="page' + i + '" src="./assests/' + (i+1) + '.glb"></a-asset-item>');
         }
       </script>
     </a-assets>
@@ -26,11 +26,11 @@
 
 
     <script>
-      for (var i = 0; i <= 3; i++) {
+      for (var i = 0; i <= 14; i++) {
 
 
         document.write(`
-    <a-entity mindar-image-target="targetIndex: ${i+1}">
+    <a-entity mindar-image-target="targetIndex: ${i}">
       <a-gltf-model rotation="90 0 0" position="0 -0.25 0" scale="5 5 5" src="#page${i}" animation-mixer>
     </a-entity>
   `);
