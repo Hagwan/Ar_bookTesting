@@ -9,8 +9,8 @@
 
 <body>
   <!--images fingeprint for the whole book! -->
-  <a-scene mindar-image="imageTargetSrc: ./targets3.mind ;" color-space="sRGB"
-    renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+  <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/Hagwan/hagwan.github.io@main/targets3.mind ;"
+    color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
     <!--here we load the models and give each model a unniqe id ! -->
     <a-assets>
@@ -24,7 +24,7 @@
 
     <!-- this code assign the fisrt model to the first image index and so on ! -->
     <!--also control the rotation and scale of the model ! -->
-  
+
     <script>
       for (var i = 0; i <= 14; i++) {
         document.write(`
